@@ -7,18 +7,11 @@
   <title>Document</title>
   <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<link href="dear.css" >
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 <style>
-  *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
- #todoTitle::first-letter{
-    color: red !important;
-    text-transform: uppercase !important;
-  }
+  
 </style>
 </head>
 <body>
@@ -51,7 +44,7 @@
           <div class="col-lg-7 text-light mx-auto">
             <table class="table col-12">
               <thead>
-                <tr class="">
+                <tr class="text-primary">
                   <th>S/N</th>
                   <th>TODO</th>
                   <th>Action</th>
@@ -132,7 +125,7 @@
    
       e.map((todos,index)=>{
         inner+="<tr>"
-          inner+=`<td class=''>  ${eval(index+1)} </td><td class=''><b> ${ todos.todo}</b><p class=''>${todos.todoDescription }</p></td><td> <button class="btn btn-primary" onclick="edit(${index})">Edit </button>  <button class="btn btn-danger" onclick="goo(${index})">Delete </button> </td>`
+          inner+=`<td class='text-'>  ${eval(index+1)} </td><td class=''><b> ${ todos.todo}</b><p class=''>${todos.todoDescription }</p></td><td> <button class="btn btn-primary" onclick="edit(${index})">Edit </button>  <button class="btn btn-danger" onclick="goo(${index})">Delete </button> </td>`
           inner+="</td>"
       })
      

@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body{
+      background-image:url(image/images2.jpg);
+      background-repeat:no-repeat;
+    background-size:cover;
+
+  }
+ #todoTitle::first-letter{
+    color: red !important;
+    text-transform: uppercase !important;
+  }
