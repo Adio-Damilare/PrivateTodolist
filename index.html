@@ -9,16 +9,31 @@
 
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    background-image:url(../image/image.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+
+}
+
+</style>
   </head>
-  <body>
+  <body onload="bodyNa()">
       <div class="container">
         <div class="row  pt-5">
         <div class="col-lg-5 mx-auto ">
             <div class="ui form">
                 <div class="text-center">
-                <label> Your name</label>
+                <h2> Your name</h2>
+                <div id="error" style="color:red;"></div>
                 </div>
-                <input type="text"  id="input" class="form-control"/>
+                <input type="text"  onmouseover="freeTheInput()" id="input" class="form-control"/>
                 <div class="text-center pt-3 ">
                     <button class="btn btn-primary w-50" onclick="start()">Start</button>
                     </div>
@@ -28,5 +43,28 @@
       </div>
 
   </body>
-  
+  <script>
+      const start=()=>{
+
+        let inp= document.getElementById("input").value
+        if(inp==""){
+            document.getElementById("error").innerText="Enter your name"
+            return
+        }
+        localStorage.setItem("dbName",JSON.stringify(inp))
+        window.location.href="Dear.html"
+      }
+      const bodyNa=()=>{
+          if(localStorage.dbName !== null){
+            //   window.location.href="Dear.html"
+              return
+          }
+      }
+
+      const freeTheInput=()=>{
+        document.getElementById("error").innerText=""
+      }
+
+
+  </script>
 </html>
